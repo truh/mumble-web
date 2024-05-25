@@ -18,6 +18,20 @@ module.exports = {
     chunkFilename: '[chunkhash].js',
     filename: '[name].js'
   },
+  stats: {
+    children: true,
+  },
+  resolve: {
+    fallback: { 
+      stream: require.resolve("stream-browserify"),
+      "buffer": require.resolve("buffer/"),
+      "crypto": require.resolve("crypto-browserify"),
+      "path": require.resolve("path-browserify"),
+      "util": require.resolve("util/"),
+      "url": require.resolve("url/"),
+      "vm": require.resolve("vm-browserify"),
+    },
+  },
   module: {
     rules: [
       {
